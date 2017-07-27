@@ -1,0 +1,292 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: normal 16px Arial, Helvetica, sans-serif;
+}
+
+h1, h3 {
+    font: normal 24px 'Open Sans', Arial, Helvetica, sans-serif;
+}
+
+/*-----------------
+	The Header
+------------------*/
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 40px;
+    z-index: 100;
+
+    background-color: #282b2c;
+    padding: 20px 40px;
+    color: #fff;
+    box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.1);
+}
+
+header a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+header h2.tzine {
+    float: right;
+    opacity: 0.9;
+}
+
+header h2.tzine:hover {
+    opacity: 1;
+}
+
+header h2.tzine a {
+    font-size: 13px;
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 12px 18px;
+    border-radius: 3px;
+    background-color: #5895DB;
+}
+
+@media (max-width: 500px) {
+
+    header {
+        padding: 20px 15px;
+    }
+
+    header h1 {
+        font-size: 24px;
+        margin: 0;
+    }
+
+}
+
+/*-----------------
+	Main Content
+------------------*/
+
+.main-content {
+    box-sizing: border-box;
+    text-align: center;
+    margin: 125px auto 60px;
+    padding: 0 40px;
+}
+
+.main-content h3 {
+    font-size: 28px;
+    color: #5a96b9;
+    padding-bottom: 20px;
+}
+
+@media (max-width: 600px) {
+
+    .main-content {
+        margin: 45px auto;
+        padding: 0 25px;
+    }
+
+}
+
+/*-------------------
+	All Products Page
+--------------------*/
+
+/*	Filter Form	*/
+
+.filters {
+    box-sizing: border-box;
+    padding: 5px 30px 30px;
+    width: 190px;
+    background-color: #FFF;
+    border: 1px solid #DBE3E7;
+    border-radius: 3px;
+    box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.08);
+    position: fixed;
+    text-align: left;
+    color: #2B2E31;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.filters .filter-criteria {
+    display: block;
+    margin: 10px 0 10px;
+}
+
+.filters span {
+    font-size: 14px;
+    display: block;
+    margin-bottom: 12px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.filters label {
+    display: block;
+    line-height: 1.4;
+    font-size: 15px;
+}
+
+.filters label input {
+    margin-right: 10px;
+}
+
+.filters button {
+    border-radius: 2px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12);
+    border: 0;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
+
+    width: 110px;
+    height: 32px;
+    margin-top: 10px;
+}
+
+.filters button.info {
+    background-color: #4BC34B;
+}
+
+.filters button.critical {
+    background-color: red;
+}
+
+/*	Products List	*/
+
+.all-groups h3 {
+    opacity: 0;
+}
+
+.groups-list {
+    list-style: none;
+    margin-left: 225px;
+    max-width: 1500px;
+    text-align: center;
+    padding: 0;
+    opacity: 0;
+    font-size: 0;
+}
+
+.all-groups.visible .groups-list,
+.all-groups.visible .teams-list,
+.all-groups.visible .filters,
+.all-groups.visible h3 {
+    opacity: 1;
+    transition: 1s;
+    pointer-events: auto;
+}
+
+.groups-list > li, .teams-list > li {
+    box-sizing: border-box;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    transition: 0.2s;
+
+    text-align: left;
+    font: normal 12px sans-serif;
+
+    background-color: #ffffff;
+    border: 1px solid #dbe3e7;
+    border-radius: 3px;
+    box-shadow: 1px 3px 1px rgba(0, 0, 0, 0.08);
+
+    margin: 0 12px 14px 0;
+    padding: 25px;
+    vertical-align: top;
+}
+
+.groups-list > li.hidden, .teams-list > li.hidden {
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+/* The group name */
+
+.groups-list h2, .teams-list.h2 {
+    display: block;
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+    margin: 0;
+}
+
+.groups-list h2 a, .teams-list h2 a {
+    text-decoration: none;
+    color: #2B2E31;
+}
+
+/* The group description */
+
+.groups-list .group-member, .teams-list .team-members {
+    margin-top: 20px;
+
+    color: #5d5d5d;
+    font-size: 14px;
+    line-height: 1.45;
+    white-space: normal;
+
+    max-width: 260px;
+    margin-bottom: 20px;
+
+    list-style: none;
+}
+
+.groups-list .group-member li, .teams-list .team-members li {
+    display: block;
+}
+
+.groups-list .group-member li span, .teams-list .team-members li span {
+    font-weight: bold;
+}
+
+/* Price and order button */
+
+.groups-list button {
+    border-radius: 2px;
+    background-color: #87bae1;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12);
+    border: 0;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
+
+    width: 110px;
+    height: 32px;
+}
+
+
+/* Teams */
+
+/*---------------------------
+	Error Page
+----------------------------*/
+
+.error {
+    opacity: 0;
+    transition: 0.6s;
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: 100px;
+    width: 100%;
+}
+
+.error.visible {
+    opacity: 1;
+}
+
+.error h3 {
+    font-size: 40px;
+}
+

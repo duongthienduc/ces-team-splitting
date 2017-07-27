@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+
+  <title>CES FC</title>
+
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400" rel="stylesheet">
+  <link href="assets/css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="compact">
+  <h2 class="tzine"><a href="http://tutorialzine.com/2015/02/single-page-app-without-a-framework/">Back to article</a>
+  </h2>
+  <h1><a href="#">Single Page App Without A Framework</a></h1>
+</header>
+
+<div class="main-content">
+
+  <div class="all-groups">
+    <div class="filters">
+
+      <div class="filter-criteria">
+        <span>Settings</span>
+        <label><input type="text" name="numGroups" id="inpNumGroups" value="4">Num Groups</label>
+      </div>
+
+      <button class="info" id="btnRefresh">Create Groups</button>
+      <button class="critical" id="btnProcess">PROCESS</button>
+    </div>
+
+    <ul class="groups-list">
+      <script id="group-template" type="x-handlebars-template">​
+      {{#each this}}
+      <li data-index="{{id}}">
+        <h2><a href="#"> {{name}} </a></h2>
+        <ul>
+        {{#each members}}
+          <li class="group-member">
+            <input type="text" value="{{this}}"/>
+            <span></span>
+          </li>
+        {{/each}}
+        </ul>
+      </li>
+      {{/each}}
+      </script>
+    </ul>
+
+    <ul class="teams-list">
+      <script id="team-template" type="x-handlebars-template">​{{#each this}}
+      <li data-index="{{id}}">
+        <h2><a href="#"> {{name}} </a></h2>
+        <ul class="team-members">
+        {{#each members}}
+          <li>
+            <span>{{this}}</span>
+          </li>
+        {{/each}}
+        </ul>
+      </li>{{/each}}</script>
+    </ul>
+  </div>
+
+</div>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.min.js"></script>
+<script src="assets/js/script.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Group 1",
+    "members": [
+      "Trường",
+      "Huy",
+      "Vỹ",
+      "Hiếu"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Group 2",
+    "members": [
+      "Lân",
+      "Đức",
+      "Quốc",
+      "An"
+    ]
+  }
+]
