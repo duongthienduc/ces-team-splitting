@@ -90,6 +90,13 @@ $(function() {
   });
 
 
+  function loadGroupData() {
+    $.getJSON("/resources/ces_fc.json", function(data) {
+      generateAllGroups(data);
+    });
+  }
+
+
   function generateAllGroups(data) {
 
     var list = $('.groups-list');
@@ -114,7 +121,7 @@ $(function() {
     list.append(theTemplate(data));
   }
 
-  generateAllGroups(groups);
+  loadGroupData();
 
   var page = $('.all-groups');
   page.addClass('visible');

@@ -18,5 +18,23 @@
       "Quốc",
       "An"
     ]
+  },
+  {
+    "id": 3,
+    "name": "Group 3",
+    "members": [
+      "Chính",
+      "Vũ",
+      "Quang",
+      "Hưng"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Group 4",
+    "members": [
+      "Hà",
+      "Phúc"
+    ]
   }
 ]

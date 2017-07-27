@@ -101,7 +101,7 @@ header h2.tzine a {
 .filters {
     box-sizing: border-box;
     padding: 5px 30px 30px;
-    width: 190px;
+    width: 230px;
     background-color: #FFF;
     border: 1px solid #DBE3E7;
     border-radius: 3px;
@@ -156,6 +156,10 @@ header h2.tzine a {
 
 .filters button.critical {
     background-color: red;
+}
+
+.filters input {
+    width: 30px;
 }
 
 /*	Products List	*/
