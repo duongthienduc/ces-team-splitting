@@ -1,5 +1,8 @@
 $(function() {
 
+  const START_RUNNING_INTERVAL = 500;
+  const STOP_RUNNING_INTERVAL = 50;
+
   var groups = [];
   var teams = [];
 
@@ -31,6 +34,15 @@ $(function() {
   });
 
   $('#btnProcess').click(function() {
+    doSplitting(START_RUNNING_INTERVAL);
+  });
+
+
+  function doSplitting(nextRunInterval) {
+    if (nextRunInterval < STOP_RUNNING_INTERVAL) {
+      return;
+    }
+
     var team1 = [];
     var team2 = [];
     teams = [
@@ -87,9 +99,13 @@ $(function() {
     });
 
     generateAllTeams(teams);
-  });
 
+    window.setTimeout(function() {
+      doSplitting(nextRunInterval * 0.95);
+    }, nextRunInterval);
+  }
 
+  
   function loadGroupData() {
     $.getJSON("/resources/ces_fc.json", function(data) {
       generateAllGroups(data);
@@ -112,13 +128,17 @@ $(function() {
   function generateAllTeams(data) {
     $('.teams-list > li').remove();
 
-    var list = $('.teams-list');
+    var $list = $('.teams-list');
 
     var theTemplateScript = $('#team-template').html();
 
     //Compile the template​
     var theTemplate = Handlebars.compile(theTemplateScript);
-    list.append(theTemplate(data));
+    $list.append(theTemplate(data));
+
+    $list.html(function (index, html) {
+      return html.replace(/\u200B/g, "");
+    });
   }
 
   loadGroupData();
